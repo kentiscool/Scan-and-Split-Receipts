@@ -122,7 +122,7 @@ public class ChooseLoginRegistrationActivity extends AppCompatActivity {
 
                 // Google Sign In was successful, authenticate with Firebase
                 GoogleSignInAccount account = task.getResult(ApiException.class);
-                System.out.println("orgy");
+           
                 firebaseAuthWithGoogle(account);
 
             } catch (ApiException e) {
@@ -140,11 +140,9 @@ public class ChooseLoginRegistrationActivity extends AppCompatActivity {
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        System.out.println("fuck");
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             FirebaseUser user = mAuth.getCurrentUser();
-                            System.out.println("shit");
                             Intent intent = new Intent(getApplication(), MainActivity.class);
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(intent);
@@ -152,7 +150,6 @@ public class ChooseLoginRegistrationActivity extends AppCompatActivity {
                         } else {
 
                             // If sign in fails, display a message to the user.
-                            System.out.println("gay");
                             //Snackbar.make(findViewById(R.id.), "Authentication Failed.", Snackbar.LENGTH_SHORT).show();
                             //updateUI(null);
                         }
@@ -176,7 +173,6 @@ public class ChooseLoginRegistrationActivity extends AppCompatActivity {
     }
 
     private void signIn() {
-        System.out.println("gay");
         Intent signInIntent =  mGoogleSignInClient.getSignInIntent();
         startActivityForResult(signInIntent, RC_SIGN_IN);
         //mAuth.signInWithCredential(mAuth);
