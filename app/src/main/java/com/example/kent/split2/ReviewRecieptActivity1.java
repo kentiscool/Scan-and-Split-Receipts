@@ -39,7 +39,6 @@ public class ReviewRecieptActivity1 extends AppCompatActivity implements Recheck
         ArrayList<String> data = this.getIntent().getStringArrayListExtra("data");
         for (int i =0; i < data.size(); i = i+2) {
             Product p =new Product(data.get(i),Double.valueOf(data.get(i+1)));
-            System.out.println("dick" + p.getName());
             listOfProducts.add(p);
         }
         mReceipt = new Receipt(listOfProducts,bitmap);
